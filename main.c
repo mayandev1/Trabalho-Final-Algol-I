@@ -6,6 +6,8 @@ int main(){
     int opcao;
 
     do {
+        printf("teste \n");
+        printf("teste \n");
         printf("\n===== MENU =====\n");
         printf("1 - Cadastrar\n");
         printf("2 - Listar\n");
