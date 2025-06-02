@@ -1,6 +1,8 @@
 #include <stdio.h>
+#include "modulos/funcoes_estoque.h"
+#include "modulos/modulo_print.h"
 
-int main() {
+int main(){
     int opcao;
 
     do {
@@ -9,7 +11,7 @@ int main() {
         printf("2 - Listar\n");
         printf("3 - Buscar\n");
         printf("4 - Excluir\n");
-        printf("5 - Alterar\n");
+        printf("5 - Editar\n");
         printf("6 - Sair\n");
         printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
