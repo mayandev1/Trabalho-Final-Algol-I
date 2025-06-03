@@ -2,7 +2,7 @@
 #define ESTOQUE_H
 
 void cadastrarItem();
-void excluirItem();
+int excluirItem();
 void editarItem();
 void buscarItem();
 void listarItem();
