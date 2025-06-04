@@ -183,3 +183,24 @@ void listarItens(int id[], char nome[][50], float preco[], int quantidade[], int
     
     
 }
+
+void consultarProduto(int id[], char nome_do_produto[][50], float preco[], int quantidade[], int total_de_produtos) {
+    int codigo;
+    printf("Informe o código do produto: ");
+    scanf("%d", &codigo);
+
+    for (int i = 0; i < total_de_produtos; i++) {
+        if (id[i] == codigo) {
+            printf("===================================================\n");
+            printf("Produto encontrado:\n");
+            printf("Código: %d\n", id[i]);
+            printf("Nome: %s\n", nome_do_produto[i]);
+            printf("Preço: R$ %.2f\n", preco[i]);
+            printf("Quantidade em estoque: %d\n", quantidade[i]);
+            printf("===================================================\n");
+            return;
+        }
+    }
+
+    printf("Produto não encontrado.\n");
+}
