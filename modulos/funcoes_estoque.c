@@ -44,3 +44,21 @@ int excluirItem(int codigo[], char nome[][50], float preco[], int quantidade){
         }
     }
 }
+
+void editaritem(int codigo[], char nome[][50], float preco[], int quantidade[]){
+    int codigo, i, op, encontrado = 0;
+
+    printf("\n----- OPÇÃO EDITAR PRODUTO -----\n");
+    printf("Digite o código do produto que deseja editar: ");
+    scanf("%d", &codigo);
+
+    for ( i = 0; i < quantidade; i++)
+    {
+        if (codigo[i] == codigo)
+        {
+            encontrado = 1;
+        }
+        
+    }
+    
+}
