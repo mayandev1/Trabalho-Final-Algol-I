@@ -45,18 +45,18 @@ int excluirItem(int codigo[], char nome[][50], float preco[], int quantidade){
     }
 }
 
-void editaritem(int codigo[], char nome[][50], float preco[], int quantidade[]){
-    int codigo, i, op, encontrado = 0;
+void editaritem(int codigo[], char nome[][50], float preco[], int quantidade[], int total){
+    int cod, i, op, encont = 0;
 
     printf("\n----- OPÇÃO EDITAR PRODUTO -----\n");
     printf("Digite o código do produto que deseja editar: ");
     scanf("%d", &codigo);
 
-    for ( i = 0; i < quantidade; i++)
+    for ( i = 0; i < total; i++)
     {
-        if (codigo[i] == codigo)
+        if (codigo[i] == cod)
         {
-            encontrado = 1;
+            encont = 1;
 
             printf("\nProduto encontrado!\n");
             printf("Código: %d\n", codigo[i]);
@@ -97,7 +97,8 @@ void editaritem(int codigo[], char nome[][50], float preco[], int quantidade[]){
                 printf("Opção invalida.\n");
             }
         }
-        
+        break;
     }
     
 }
+
