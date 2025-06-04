@@ -1,25 +1,29 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "modulos/funcoes_estoque.h"
 #include "modulos/modulo_print.h"
 
+#define MAX 100
+
 int main(){
+    int id[MAX];                   
+    char nome[MAX][50];
+    float preco[MAX];
+    int quantidade[MAX];
+    int total_de_produtos = 0;
     int opcao;
 
     do {
-        printf("\n===== MENU =====\n");
-        printf("1 - Cadastrar\n");
-        printf("2 - Listar\n");
-        printf("3 - Buscar\n");
-        printf("4 - Excluir\n");
-        printf("5 - Editar\n");
-        printf("6 - Sair\n");
-        printf("Escolha uma opcao: ");
+        printMenuPrincipal();
         scanf("%d", &opcao);
 
-        switch(opcao) {
+        switch(opcao){
             case 1:
-                printf("Opcao: Cadastrar\n");
+                limparTela();
+                cadastrarItem(id, nome, preco, quantidade, total_de_produtos);
+                total_de_produtos++;
                 break;
+
             case 2:
                 printf("Opcao: Listar\n");
                 break;
@@ -38,7 +42,7 @@ int main(){
             default:
                 printf("Opcao invalida! Tente novamente.\n");
         }
-    } while(opcao != 6);
+    } while(opcao != 0);
 
     return 0;
 }
