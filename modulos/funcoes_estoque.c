@@ -1,5 +1,12 @@
 #include <stdio.h>
 #include "funcoes_estoque.h"
+#define MAX 100
+
+int id[MAX];
+char nome[MAX][50];
+float preco[MAX];
+int quantidade[MAX];
+int total_de_produtos = 0;
 
 void limparTela(){
     system("cls");
@@ -45,21 +52,21 @@ int excluirItem(int codigo[], char nome[][50], float preco[], int quantidade){
     }
 }
 
-void editaritem(int codigo[], char nome[][50], float preco[], int quantidade[]){
-    int codigo, i, op, encontrado = 0;
+void editaritem(){
+    int codi, i, op, encontrado = 0;
 
     printf("\n----- OPÇÃO EDITAR PRODUTO -----\n");
     printf("Digite o código do produto que deseja editar: ");
-    scanf("%d", &codigo);
+    scanf("%d", &codi);
 
-    for ( i = 0; i < quantidade; i++)
+    for ( i = 0; i < total_de_produtos; i++)
     {
-        if (codigo[i] == codigo)
+        if (id[i] == codi)
         {
             encontrado = 1;
 
             printf("\nProduto encontrado!\n");
-            printf("Código: %d\n", codigo[i]);
+            printf("Código: %d\n", id[i]);
             printf("Nome: %s\n", nome[i]);
             printf("Preço: %2.f\n", preco[i]);
             printf("Quantidade: %d\n", quantidade[i]);
@@ -80,7 +87,7 @@ void editaritem(int codigo[], char nome[][50], float preco[], int quantidade[]){
                 break;
             case 2:
                 printf("Novo código: ");
-                scanf("%d", &codigo[i]);
+                scanf("%d", &id[i]);
                 printf("Código atualizado com sucesso!\n");
                 break;
             case 3:
@@ -96,8 +103,10 @@ void editaritem(int codigo[], char nome[][50], float preco[], int quantidade[]){
             default:
                 printf("Opção invalida.\n");
             }
+            break;
         }
         
     }
     
 }
+
