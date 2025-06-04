@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
- #define MAX 1
+ #define MAX 100
 
     int cadastrarproduto(int codigo[],char nome[][50],float preco[],int quantidade){
         if(quantidade >= MAX){
