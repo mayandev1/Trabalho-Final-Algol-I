@@ -111,7 +111,7 @@ int excluirItem(int codigo[], char nome[][50], float preco[], int quantidade[], 
 }
 
 // Faltou passar os parametros tambem
-void editarItem(){
+void editarItem(int id[], char nome[][50], float preco[], int quantidade[], int total_de_produtos){
     int codi, i, op, encontrado = 0;
 
     printf("\n----- OPÇÃO EDITAR PRODUTO -----\n");
