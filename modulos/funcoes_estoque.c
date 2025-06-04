@@ -57,6 +57,45 @@ void editaritem(int codigo[], char nome[][50], float preco[], int quantidade[]){
         if (codigo[i] == codigo)
         {
             encontrado = 1;
+
+            printf("\nProduto encontrado!\n");
+            printf("Código: %d\n", codigo[i]);
+            printf("Nome: %s\n", nome[i]);
+            printf("Preço: %2.f\n", preco[i]);
+            printf("Quantidade: %d\n", quantidade[i]);
+
+            printf("\nO que deseja editar?\n");
+            printf("1 - Nome\n");
+            printf("2 - Código\n");
+            printf("3 - Preço\n");
+            printf("4 - Quantidade\n");
+            scanf("%d", &op);
+
+            switch (op)
+            {
+            case 1:
+                printf("Novo nome: ");
+                scanf(" %[^\n]", nome[i]);
+                printf("Nome atualizado com sucesso!\n");
+                break;
+            case 2:
+                printf("Novo código: ");
+                scanf("%d", &codigo[i]);
+                printf("Código atualizado com sucesso!\n");
+                break;
+            case 3:
+                printf("Novo preço: ");
+                scanf("%f", &preco[i]);
+                printf("Preço atualizado com sucesso!\n");
+                break;
+            case 4:
+                printf("Nova quantidade: ");
+                scanf("%d", quantidade[i]);
+                printf("Quantidade atualizada com sucesso!\n");
+                break;
+            default:
+                printf("Opção invalida.\n");
+            }
         }
         
     }
