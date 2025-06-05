@@ -16,25 +16,29 @@ int main(){
     do {
         printMenuPrincipal();
         scanf("%d", &opcao);
+        limparTela();
 
         switch(opcao){
             case 1:
-                limparTela();
                 cadastrarItem(id, nome, preco, quantidade, total_de_produtos);
                 total_de_produtos++;
+                limparTela();
                 break;
-
             case 2:
-                printf("Opcao: Listar\n");
+                listarItens(id, nome, preco, quantidade, total_de_produtos);
+                limparTela();
                 break;
             case 3:
-                printf("Opcao: Buscar\n");
+                editarItem(id, nome, preco, quantidade, total_de_produtos);
+                limparTela();
                 break;
             case 4:
-                printf("Opcao: Excluir\n");
+                buscarItem(id, nome, preco, quantidade, total_de_produtos);
+                limparTela();
                 break;
             case 5:
-                printf("Opcao: Alterar\n");
+                excluirItem(id, nome, preco, quantidade, total_de_produtos);
+                limparTela();
                 break;
             case 6:
                 printf("Saindo do sistema...\n");
@@ -42,7 +46,8 @@ int main(){
             default:
                 printf("Opcao invalida! Tente novamente.\n");
         }
-    } while(opcao != 0);
+
+    } while(opcao != 6);
 
     return 0;
 }
