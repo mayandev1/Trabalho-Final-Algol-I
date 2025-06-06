@@ -73,16 +73,12 @@ gcc main.c modules/funcoes_estoque.c modules/modulo_print.c -o estoque.exe
 
 <div align="center">
   <h3>🎛️ Menu Principal</h3>
-  <img src="./screenshots/menu.png" alt="Menu do Sistema" width="75%">
-  <em>Interface principal com navegação completa</em>
+  <img src="./screenshots/menu.png" alt="Menu do Sistema" width="400">
+  <p><em>Interface principal com navegação completa</em></p>
   
   <h3>📝 Cadastro de Produtos</h3>
-  <img src="./screenshots/cadastro.png" alt="Tela de cadastro" width="75%">
-  <em>Formulário com validação de campos obrigatórios</em>
-  
-  <h3>📋 Relatório de Estoque</h3>
-  <img src="./screenshots/lista.png" alt="Lista de produtos" width="90%">
-  <em>Visualização paginada com filtros</em>
+  <img src="./screenshots/cadastro.png" alt="Tela de cadastro" width="400">
+  <p><em>Formulário com validação de campos obrigatórios</em></p>
 </div>
 
 ## 🛠️ Tecnologias Utilizadas
