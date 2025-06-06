@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "modulos/funcoes_estoque.h"
-#include "modulos/modulo_print.h"
+#include "modules/funcoes_estoque.h"
+#include "modules/modulo_print.h"
 
 #define MAX 100
 
@@ -14,14 +14,18 @@ int main(){
     int opcao;
 
     do {
+        limparTela();
         printMenuPrincipal();
         scanf("%d", &opcao);
         limparTela();
 
         switch(opcao){
             case 1:
-                cadastrarItem(id, nome, preco, quantidade, total_de_produtos);
-                total_de_produtos++;
+                // Se o cadastro for bem sucedido (retorna 1), incrementa o total de produtos   
+                if (cadastrarItem(id, nome, preco, quantidade, total_de_produtos)){
+
+                    total_de_produtos++;
+                }
                 limparTela();
                 break;
             case 2:
@@ -37,7 +41,9 @@ int main(){
                 limparTela();
                 break;
             case 5:
-                excluirItem(id, nome, preco, quantidade, total_de_produtos);
+                // Chama a função para excluir um item com base no ID informado pelo usuário.
+                // A função retorna o novo total de produtos após a exclusão, e atualizamos a variável.
+                total_de_produtos = excluirItem(id, nome, preco, quantidade, total_de_produtos);
                 limparTela();
                 break;
             case 6:
