@@ -1,5 +1,5 @@
 # 📋 Sistema de Gerenciamento de Estoque
-[![Badge Concluído](https://img.shields.io/badge/status-em%20Concluído-yellow)]()
+[![Badge Concluído](https://img.shields.io/badge/status-%20Concluído-yellow)]()
 [![Licença](https://img.shields.io/badge/license-MIT-blue)]()
 
 ## 📌 Informações do Projeto
