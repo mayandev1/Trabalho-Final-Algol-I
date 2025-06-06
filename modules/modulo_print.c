@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "modulo_print.h"
 
+//Função para printar o menu
 void printMenuPrincipal(){
     printf("=========================================\n");
     printf("         >>> MENU DE ESTOQUE <<<         \n");

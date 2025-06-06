@@ -1,4 +1,6 @@
-# 📋 README - Sistema de Gerenciamento de Estoque
+# 📋 Sistema de Gerenciamento de Estoque
+[![Badge Concluído](https://img.shields.io/badge/status-em%20Concluído-yellow)]()
+[![Licença](https://img.shields.io/badge/license-MIT-blue)]()
 
 ## 📌 Informações do Projeto
 
@@ -24,12 +26,13 @@ Sistema de gerenciamento de estoque desenvolvido em C que permite:
 ```
 projeto_estoque/
 ├── 📄 main.c                 # Arquivo principal
+├── 📂 screenshots            # Capturas de tela
 ├── 📂 modules/
 │   ├── 📄 funcoes_estoque.c  # Funções do estoque
 │   ├── 📄 funcoes_estoque.h  # Cabeçalhos
 │   ├── 📄 modulo_print.c     # Funções de exibição
 │   └── 📄 modulo_print.h     # Cabeçalhos
-└── 📄 README.md              # Este arquivo
+└── 📄 README.md              # Documentação do projeto
 ```
 
 ## 💻 Como Compilar e Executar
@@ -64,6 +67,23 @@ gcc main.c modules/funcoes_estoque.c modules/modulo_print.c -o estoque.exe
 5. 🗑️ Remover Produto
    - ⚠️ Confirmação antes de excluir
    - 🔄 Reorganiza a lista automaticamente
+
+
+## 🖼️ Demonstração Visual
+
+<div align="center">
+  <h3>🎛️ Menu Principal</h3>
+  <img src="./screenshots/menu.png" alt="Menu do Sistema" width="75%">
+  <em>Interface principal com navegação completa</em>
+  
+  <h3>📝 Cadastro de Produtos</h3>
+  <img src="./screenshots/cadastro.png" alt="Tela de cadastro" width="75%">
+  <em>Formulário com validação de campos obrigatórios</em>
+  
+  <h3>📋 Relatório de Estoque</h3>
+  <img src="./screenshots/lista.png" alt="Lista de produtos" width="90%">
+  <em>Visualização paginada com filtros</em>
+</div>
 
 ## 🛠️ Tecnologias Utilizadas
 

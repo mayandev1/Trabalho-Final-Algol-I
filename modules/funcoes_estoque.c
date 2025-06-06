@@ -35,6 +35,7 @@ int cadastrarItem(int id[], char nome[][50], float preco[], int quantidade[], in
     if(total_de_produtos >= MAX){
         limparTela();
         printf("Limite de produtos atingido\n");
+        getchar();
         pequenaPausa();
         return 0; // Retorna 0 para indicar que o cadastro falhou
     }
@@ -275,6 +276,7 @@ void listarItens(int id[], char nome[][50], float preco[], int quantidade[], int
     pequenaPausa();
 }
 
+//Função para buscar um produto e mostrar suas informações
 void buscarItem(int id[], char nome[][50], float preco[], int quantidade[], int total_de_produtos){
     int codigo;
 

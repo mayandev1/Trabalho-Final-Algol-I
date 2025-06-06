@@ -5,6 +5,8 @@
 
 #define MAX 100
 
+//Inclusão dos módulos, bibliotecas padrão e definição de costante "MAX"
+
 int main(){
     int id[MAX];                   
     char nome[MAX][50];

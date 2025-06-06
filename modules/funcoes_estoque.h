@@ -1,6 +1,7 @@
 #ifndef ESTOQUE_H
 #define ESTOQUE_H
 
+// Protótipos das funções
 int cadastrarItem(int id[], char nome[][50], float preco[], int quantidade[], int total_de_produtos);
 int excluirItem(int codigo[], char nome[][50], float preco[], int quantidade[], int total);
 void editarItem(int id[], char nome[][50], float preco[], int quantidade[], int total_de_produtos);
