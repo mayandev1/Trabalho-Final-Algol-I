@@ -1,3 +1,4 @@
+//Inclusão dos módulos, bibliotecas padrão e definição de costante "MAX"
 #include <stdio.h>
 #include <stdlib.h>
 #include "modules/funcoes_estoque.h"
@@ -5,15 +6,10 @@
 
 #define MAX 100
 
-//Inclusão dos módulos, bibliotecas padrão e definição de costante "MAX"
-
 int main(){
-    int id[MAX];                   
+    int id[MAX], quantidade[MAX], total_de_produtos = 0, opcao;             
     char nome[MAX][50];
     float preco[MAX];
-    int quantidade[MAX];
-    int total_de_produtos = 0;
-    int opcao;
 
     do {
         limparTela();
@@ -25,7 +21,6 @@ int main(){
             case 1:
                 // Se o cadastro for bem sucedido (retorna 1), incrementa o total de produtos   
                 if (cadastrarItem(id, nome, preco, quantidade, total_de_produtos)){
-
                     total_de_produtos++;
                 }
                 limparTela();

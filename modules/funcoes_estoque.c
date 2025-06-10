@@ -49,7 +49,7 @@ int cadastrarItem(int id[], char nome[][50], float preco[], int quantidade[], in
 
     // Verifica se o ID já está cadastrado
     for(int i = 0; i < total_de_produtos; i++){
-        if(id[i] == novoID) {
+        if(id[i] == novoID){
             printf("ID ja existe. Digite outro!\n");
             pequenaPausa();
             return 0; // Retorna 0 se o ID já existir
@@ -119,7 +119,8 @@ int excluirItem(int id[], char nome[][50], float preco[], int quantidade[], int 
                 strcpy(nome[j], nome[j + 1]);
             }
             limparTela();
-            printf("ID do produto excluido: %d\n", cod);
+            printf("ENCONTRADO!\n");
+            printf("ID DO PRODUTO EXCLUIDO: %d\n", cod);
             total_de_produtos--;
             pequenaPausa();
             break;
@@ -128,7 +129,7 @@ int excluirItem(int id[], char nome[][50], float preco[], int quantidade[], int 
 
     if(!encontrado){
         limparTela();
-        printf("O produto nao foi encontrado.\n");
+        printf("O PRODUTO NAO FOI ENCONTRADO.\n");
         pequenaPausa();
     }
 
@@ -144,6 +145,16 @@ void editarItem(int id[], char nome[][50], float preco[], int quantidade[], int 
     printf("Digite o ID do produto que deseja editar: ");
     scanf("%d", &cod);
     limparBuffer();
+
+    limparTela();
+    for(int i = 1; i <= 3; i++){
+        printf("Buscando");
+        for (int j = 0; j < i; j++){
+            printf(".");
+        }
+        Sleep(650);
+        limparTela();
+    }
     
     for(int i = 0; i < total_de_produtos; i++){
         if(id[i] == cod){
@@ -198,7 +209,8 @@ void editarItem(int id[], char nome[][50], float preco[], int quantidade[], int 
                     pequenaPausa();
                     break;
                 case 5:
-                    printf("Novo nome:");
+                    limparTela();
+                    printf("Novo nome: ");
                     scanf("%[^\n]", &nome[i]);
 
                     printf("Novo ID: ");
@@ -208,7 +220,7 @@ void editarItem(int id[], char nome[][50], float preco[], int quantidade[], int 
                     scanf("%f", &preco[i]);
 
                     printf("Nova quantidade: ");
-                    scanf("%d", quantidade[i]);
+                    scanf("%d", &quantidade[i]);
 
                     limparTela();
                     printf("Todos os dados foram atualizados com sucesso!");
@@ -226,7 +238,7 @@ void editarItem(int id[], char nome[][50], float preco[], int quantidade[], int 
 
     if(!encontrado){
         limparTela();
-        printf("Produto com ID %d nao encontrado.\n", cod);
+        printf("PRODUTO COM ID %d NAO ENCONTRADO.\n", cod);
         pequenaPausa();
     }
 }
@@ -236,6 +248,7 @@ void listarItens(int id[], char nome[][50], float preco[], int quantidade[], int
     if(total_de_produtos == 0){
         limparTela();
         printf("NENHUM PRODUTO CADASTRADO PARA LISTAR!\n");
+        getchar();
         pequenaPausa();
         return;
     }
@@ -284,6 +297,16 @@ void buscarItem(int id[], char nome[][50], float preco[], int quantidade[], int 
     scanf("%d", &codigo);
     limparBuffer();
 
+    limparTela();
+    for(int i = 1; i <= 3; i++){
+        printf("Buscando");
+        for (int j = 0; j < i; j++){
+            printf(".");
+        }
+        Sleep(650);
+        limparTela();
+    }
+
     for(int i = 0; i < total_de_produtos; i++){
         if(id[i] == codigo){
             printf("=====================================\n");
@@ -300,6 +323,6 @@ void buscarItem(int id[], char nome[][50], float preco[], int quantidade[], int 
     }
 
     limparTela();
-    printf("O Produto nao foi encontrado.\n");
+    printf("O PRODUTO NAO FOI ENCONTRADO.\n");
     pequenaPausa();
 }
