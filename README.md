@@ -103,7 +103,7 @@ gcc main.c modules/funcoes_estoque.c modules/modulo_print.c -o estoque.exe
 
   <h3>📋 Exclusão de Produto</h3>
   <img src="./screenshots/excluir.png" alt="Tela de edição" width="400">
-  <p><em>Tela de edição</em></p>
+  <p><em>Tela de Exclusão</em></p>
   <img src="./screenshots/loading.png" alt="Tela de loading" width="500">
   <p><em>Tela de loading</em></p>
   <img src="./screenshots/excluir1.png" alt="Menu de exclusão" width="400">
