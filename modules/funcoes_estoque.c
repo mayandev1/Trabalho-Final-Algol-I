@@ -40,22 +40,47 @@ int cadastrarItem(int id[], char nome[][50], float preco[], int quantidade[], in
         return 0; // Retorna 0 para indicar que o cadastro falhou
     }
 
-    int novoID;
+    int novoID;    
+    int id_duplicado;
+    int input_valido;
+    
+    do {
 
-    // Solicita o ID do novo produto
-    printf("Digite o ID do produto: ");
-    scanf("%d", &novoID);
-    limparBuffer();
+        id_duplicado = 0;
+        input_valido = 1;
 
-    // Verifica se o ID já está cadastrado
-    for(int i = 0; i < total_de_produtos; i++){
-        if(id[i] == novoID){
-            printf("ID ja existe. Digite outro!\n");
-            pequenaPausa();
-            return 0; // Retorna 0 se o ID já existir
+        printf("Digite o ID do produto (entre 0 e 9999): ");
+        
+        // Verifica se o ID é um numero inteiro
+        if (scanf("%d", &novoID) != 1){
+            limparTela();
+            printf("ERRO: DIGITE UM NUMERO INTEIRO POSITIVO!\n");
+            limparBuffer();
+            input_valido = 0;
+            continue;
         }
-    }
+        limparBuffer();
 
+        //Verifica se o numero do ID está entre 0 e 9999
+        if (novoID < 0 || novoID > 9999){
+            limparTela();
+            printf("ERRO: DIGITE UM NUMERO ENTRE 0 E 9999!\n");
+            input_valido = 0;
+            continue;
+        }
+        
+        // Verifica se o ID já está cadastrado
+        for(int i = 0; i < total_de_produtos; i++){
+            if(id[i] == novoID){
+                id_duplicado = 1;
+                printf("ID ja existe. Digite outro!\n");
+                pequenaPausa();
+                break;
+            }
+        }
+
+    } while (id_duplicado || !input_valido);
+    
     // Armazena o novo ID no vetor
     id[total_de_produtos] = novoID;
 
@@ -83,7 +108,7 @@ int cadastrarItem(int id[], char nome[][50], float preco[], int quantidade[], in
 
 //Função para excluir um item
 int excluirItem(int id[], char nome[][50], float preco[], int quantidade[], int total_de_produtos) {
-    int cod, encontrado = 0;
+    int cod, encontrado = 0, input_valido;
 
     if(total_de_produtos <= 0){
         limparTela();
@@ -95,9 +120,22 @@ int excluirItem(int id[], char nome[][50], float preco[], int quantidade[], int 
 
     limparTela();
     printf("======= OPCAO EXCLUIR PRODUTO =======\n");
-    printf("Digite o ID do produto: ");
-    scanf("%d", &cod);
-    limparBuffer();
+    
+    do {
+        input_valido = 1;
+
+        printf("Digite o ID do produto: ");
+    
+        if (scanf("%d", &cod) != 1){
+            limparTela();
+            printf("ERRO: DIGITE UM NUMERO INTEIRO POSITIVO!\n");
+            limparBuffer();
+            input_valido = 0;
+            continue;
+        }
+        limparBuffer();
+        
+    } while (!input_valido);
 
     limparTela();
     for(int i = 1; i <= 3; i++){
@@ -138,13 +176,26 @@ int excluirItem(int id[], char nome[][50], float preco[], int quantidade[], int 
 
 //Função para editar um produto
 void editarItem(int id[], char nome[][50], float preco[], int quantidade[], int total_de_produtos){
-    int cod, encontrado = 0;
+    int cod, encontrado = 0, input_valido;
 
     limparTela();
     printf("===== OPCAO EDITAR PRODUTO =====\n");
-    printf("Digite o ID do produto que deseja editar: ");
-    scanf("%d", &cod);
-    limparBuffer();
+
+    do {
+        input_valido = 1;
+
+        printf("Digite o ID do produto que deseja editar: ");
+    
+        if (scanf("%d", &cod) != 1){
+            limparTela();
+            printf("ERRO: DIGITE UM NUMERO INTEIRO POSITIVO!\n");
+            limparBuffer();
+            input_valido = 0;
+            continue;
+        }
+        limparBuffer();
+        
+    } while (!input_valido);
 
     limparTela();
     for(int i = 1; i <= 3; i++){
@@ -238,7 +289,7 @@ void editarItem(int id[], char nome[][50], float preco[], int quantidade[], int 
 
     if(!encontrado){
         limparTela();
-        printf("PRODUTO COM ID %d NAO ENCONTRADO.\n", cod);
+        printf("O PRODUTO NAO ENCONTRADO.\n");
         pequenaPausa();
     }
 }
@@ -291,9 +342,25 @@ void listarItens(int id[], char nome[][50], float preco[], int quantidade[], int
 
 //Função para buscar um produto e mostrar suas informações
 void buscarItem(int id[], char nome[][50], float preco[], int quantidade[], int total_de_produtos){
-    int codigo;
+    int codigo, input_valido;
 
-    printf("Informe o ID do produto: ");
+    printf("===== OPCAO BUSCAR PRODUTO =====\n");
+    do {
+        input_valido = 1;
+
+        printf("Informe o ID do produto: ");
+    
+        if (scanf("%d", &codigo) != 1){
+            limparTela();
+            printf("ERRO: DIGITE UM NUMERO INTEIRO POSITIVO!\n");
+            limparBuffer();
+            input_valido = 0;
+            continue;
+        }
+        limparBuffer();
+        
+    } while (!input_valido);
+
     scanf("%d", &codigo);
     limparBuffer();
 

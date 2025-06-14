@@ -78,11 +78,32 @@ gcc main.c modules/funcoes_estoque.c modules/modulo_print.c -o estoque.exe
   
   <h3>📝 Cadastro de Produto</h3>
   <img src="./screenshots/cadastro.png" alt="Tela de cadastro" width="400">
+  <img src="./screenshots/cadastro1.png" alt="Adição de dados" width="400">
   <p><em>Formulário para registro de novos itens no estoque</em></p>
 
   <h3>📋 Listagem de Produtos</h3>
   <img src="./screenshots/lista.png" alt="Lista de produtos" width="500">
   <p><em>Visualização completa do inventário com ordenação</em></p>
+
+  <h3>📋 Edição de Produtos</h3>
+  <img src="./screenshots/editar.png" alt="Tela de edição" width="500">
+  <img src="./screenshots/loading.png" alt="Tela de loading" width="500">
+  <img src="./screenshots/editar1.png" alt="Menu de edição" width="500">
+  <p><em>Interface principal do menu editar</em></p>
+
+  <h3>📋 Busca de Produto</h3>
+  <img src="./screenshots/buscar.png" alt="Tela de busca" width="500">
+  <img src="./screenshots/loading.png" alt="Tela de loading" width="500">
+  <img src="./screenshots/buscar1.png" alt="Resultado da busca" width="500">
+  <p><em>Relatório de busca por produto</em></p>
+
+  <h3>📋 Exclusão de Produto</h3>
+  <img src="./screenshots/excluir.png" alt="Tela de edição" width="500">
+  <img src="./screenshots/loading.png" alt="Tela de loading" width="500">
+  <img src="./screenshots/excluir1.png" alt="Menu de edição" width="500">
+  <img src="./screenshots/pósExclusão.png" alt="Listagem pós exclusão" width="500">
+  <p><em>Interface principal da opção excluir</em></p>
+
 </div>
 
 ## 🛠️ Tecnologias Utilizadas
@@ -93,8 +114,8 @@ gcc main.c modules/funcoes_estoque.c modules/modulo_print.c -o estoque.exe
 
 ## 🐛 Bugs Conhecidos
 
-| Problema | Gravidade | Descrição |
-|----------|-----------|-----------|
-| 📛 Nomes longos | ⚠️ Médio | Nomes > 49 caracteres causam problemas |
-| 💰 Valores negativos | ⚠️ Baixo | Aceita preços/quantidades negativas |
-| 🖥️ Portabilidade | ⚠️ Alto | Funciona melhor no Windows |
+| Ícone | Problema            | Gravidade | Descrição                                                                 |
+|-------|---------------------|-----------|---------------------------------------------------------------------------|
+| 🔢    | Números em nomes    | ⚠️ Alto   | Campo "nome" aceita valores numéricos indevidamente                      |
+| 📛    | Nomes longos        | ⚠️ Médio  | Nomes > 49 caracteres causam problemas de exibição                       |
+| 🖥️    | Portabilidade       | ⚠️ Alto   | Funciona melhor no Windows que em outros sistemas operacionais           |
