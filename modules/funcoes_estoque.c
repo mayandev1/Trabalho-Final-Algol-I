@@ -249,7 +249,7 @@ void editarItem(int id[], char nome[][50], float preco[], int quantidade[], int 
                         if (scanf("%d", &NId) != 1 || NId < 0 || NId > 9999)
                         {
                             limparBuffer();
-                            printf("ERRO: DIGITE UM NUMERO INTEIRO");
+                            printf("ERRO: DIGITE UM NUMERO INTEIRO ");
                         }else{
                             id[i] = NId;
                             printf("ID atualizado com sucesso!\n");
