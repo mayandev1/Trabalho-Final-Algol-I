@@ -94,6 +94,14 @@ int cadastrarItem(int id[], char nome[][50], float preco[], int quantidade[], in
     scanf("%f", &preco[total_de_produtos]);
     limparBuffer();
 
+    // Verifica se o preço do produto não é negativo
+    if(preco[total_de_produtos] < 0){
+        limparTela();
+        printf("ERRO: o preço não pode ser negativo!\n");
+        pequenaPausa();
+        return 0;
+    }
+
     // Solicita a quantidade do produto em estoque
     printf("Digite a quantidade em estoque: ");
     scanf("%d", &quantidade[total_de_produtos]);
@@ -176,7 +184,7 @@ int excluirItem(int id[], char nome[][50], float preco[], int quantidade[], int 
 
 //Função para editar um produto
 void editarItem(int id[], char nome[][50], float preco[], int quantidade[], int total_de_produtos){
-    int cod, encontrado = 0, input_valido;
+    int cod, encontrado = 0, input_valido, NId;
 
     limparTela();
     printf("===== OPCAO EDITAR PRODUTO =====\n");
@@ -229,15 +237,35 @@ void editarItem(int id[], char nome[][50], float preco[], int quantidade[], int 
             printf("Opcao: ");
             scanf("%d", &op);
             limparBuffer();
+             
+            int input_valido, NovoId;
 
             switch(op){
-                case 1:
-                    limparTela();
-                    printf("Novo ID: ");
-                    scanf("%d", &id[i]);
-                    printf("ID atualizado com sucesso!\n");
+                case 1:{
+                    input_valido = 0;
+                    do{
+                        limparTela();
+                        printf("Novo ID: ");
+                        if (scanf("%d", &NId) != 1 || NId < 0 || NId > 9999)
+                        {
+                            limparBuffer();
+                            printf("ERRO: DIGITE UM NUMERO INTEIRO");
+                        }else{
+                            id[i] = NId;
+                            printf("ID atualizado com sucesso!\n");
+                            input_valido = 1;
+                        }
+                        limparBuffer();
+                        if (!input_valido)
+                        {
+                            pequenaPausa();
+                        }
+                        
+                        
+                    } while (!input_valido);
                     pequenaPausa();
                     break;
+                }
                 case 2:
                     limparTela();
                     printf("Novo nome: ");
