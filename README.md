@@ -68,6 +68,58 @@ gcc main.c modules/funcoes_estoque.c modules/modulo_print.c -o estoque.exe
    - ⚠️ Confirmação antes de excluir
    - 🔄 Reorganiza a lista automaticamente
 
+## 🧠 Visão Geral das Funções
+
+A seguir, estão descritas as funções implementadas no projeto, com suas respectivas responsabilidades:
+
+```c
+int cadastrarItem(int id[], char nome[][50], float preco[], int quantidade[], int total_de_produtos);
+```
+- Cadastra um novo produto no estoque.
+- Valida duplicidade de ID e limite de itens (até 100).
+- Retorna 1 se o cadastro for bem-sucedido, ou 0 em caso de erro.
+
+```c
+int excluirItem(int codigo[], char nome[][50], float preco[], int quantidade[], int total);
+```
+- Remove um produto com base no ID informado.
+- Reorganiza os vetores para manter a consistência dos dados.
+- Retorna o novo total de produtos após a exclusão.
+
+```c
+void editarItem(int id[], char nome[][50], float preco[], int quantidade[], int total_de_produtos);
+```
+- Permite alterar um ou todos os atributos de um produto já cadastrado.
+- Menu interativo com opções para editar nome, ID, preço e quantidade.
+
+```c
+void buscarItem(int id[], char nome_do_produto[][50], float preco[], int quantidade[], int total_de_produtos);
+```
+- Busca um produto pelo ID e exibe suas informações detalhadas.
+- Caso o ID não seja encontrado, exibe mensagem apropriada.
+
+```c
+void listarItens(int id[], char nome[][50], float preco[], int quantidade[], int total_de_produtos);
+```
+- Lista todos os produtos cadastrados ordenados pelo ID.
+- Exibe os atributos principais: ID, nome, preço e quantidade.
+
+```c
+void limparBuffer();
+```
+- Limpa o buffer de entrada do teclado.
+- Evita problemas na leitura de strings após `scanf()`.
+
+```c
+void limparTela();
+```
+- Limpa o terminal de acordo com o sistema operacional (Windows no caso).
+
+```c
+void pequenaPausa();
+```
+- Pausa a execução até o usuário pressionar ENTER.
+- Utilizada após operações importantes para garantir leitura das mensagens.
 
 ## 🖼️ Demonstração Visual
 
